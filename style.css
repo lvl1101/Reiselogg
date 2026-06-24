@@ -5,6 +5,7 @@ H1 {
     text-align: center;
 }
 .bilde_23_06 {
-    width: 690px;
-    height: 400px;
+    width: 100%;
+    max-width: 690px;
+    height: auto;
 }
