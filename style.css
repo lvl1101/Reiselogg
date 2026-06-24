@@ -1,4 +1,9 @@
-H1 {
+body {
+    display: flex;
+    background-color: darkgray;
+}
+
+.H1 {
     text-align: center;
 }
 .info {
@@ -6,6 +11,99 @@ H1 {
 }
 .bilde_23_06 {
     width: 100%;
-    max-width: 690px;
+    max-width: 540px;
     height: auto;
+}
+.bilde_24_06 {
+    width: 100%;
+    max-height: 230px;
+    width: auto;
+}
+.bilder_24_06 {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+/* Standard (desktop) */
+.innholdsfortegnelse {
+    position: sticky;
+    top: 20px;
+    width: 100px;
+    min-width: 100px;   /* Hindrer at den krymper */
+    height: fit-content;
+    padding: 12px; /* kanskje 10px */
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    border-left: 4px solid #555; /* Fargestrek på venstre side */
+    margin: 20px 10px;
+}
+
+.innholdsfortegnelse::before {
+    content: "Innhold";   /* Liten tittel øverst */
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+    color: #333;
+}
+
+.innholdsfortegnelse ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.innholdsfortegnelse a {
+    text-decoration: none;
+    display: block;
+    padding: 4px 0;
+    color: #444;
+    font-size: 0.85em;
+    transition: color 0.2s;
+}
+
+.innholdsfortegnelse a:hover {
+    color: #000;
+    padding-left: 4px;   /* Liten "skyv" til høyre ved hover */
+    transition: padding 0.15s;
+}
+
+.innhold {
+    flex: 1;
+    padding: 0 30px;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;   /* Stable sidebar og innhold vertikalt */
+    }
+
+    .innholdsfortegnelse {
+        position: static;         /* Ikke lenger sticky */
+        width: 100%;
+        min-width: unset;
+        border-left: none;
+        border-bottom: 4px solid #555;  /* Strek under istedenfor til venstre */
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .innholdsfortegnelse ul {
+        display: flex;            /* Lenker side om side */
+        gap: 15px;
+        flex-wrap: wrap;          /* Brytes til ny linje hvis det ikke er plass */
+    }
+}
+
+/* Mobil */
+@media (max-width: 480px) {
+    .innholdsfortegnelse ul {
+        flex-direction: column;   /* Lenker under hverandre igjen på liten skjerm */
+    }
+
+    .innhold {
+        padding: 0 15px;          /* Mindre padding på mobil */
+    }
 }
