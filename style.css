@@ -9,17 +9,13 @@ body {
 .info {
     text-align: center;
 }
-.bilde_23_06 {
-    width: 100%;
-    max-width: 540px;
-    height: auto;
-}
-.bilde_24_06 {
+
+.bilde_stående {
     width: 100%;
     max-height: 230px;
     width: auto;
 }
-.bilder_24_06 {
+.bilde_liggende {
     width: 100%;
     max-width: 500px;
     height: auto;
