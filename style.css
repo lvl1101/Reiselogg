@@ -1,24 +1,36 @@
-body {
-    display: flex;
-    background-color: darkgray;
+    body {
+        display: flex;
+        background-color: darkgray;
+    }
+
+    .H1 {
+        text-align: center;
+    }
+    .info {
+        text-align: center;
+    }
+
+    .bilde_stående {
+        width: 100%;
+        max-height: 230px;
+        width: auto;
+    }
+    .bilde_liggende {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+    }
+
+figure {
+    display: inline-block;
+    margin: 10px;
 }
 
-.H1 {
+figcaption {
     text-align: center;
-}
-.info {
-    text-align: center;
-}
-
-.bilde_stående {
-    width: 100%;
-    max-height: 230px;
-    width: auto;
-}
-.bilde_liggende {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
+    font-size: 0.85em;
+    color: #555;
+    margin-top: 4px;
 }
 
 /* Standard (desktop) */
@@ -70,36 +82,65 @@ body {
     padding: 0 30px;
 }
 
-/* Tablet */
+/* Tablet og mobil */
 @media (max-width: 768px) {
     body {
-        flex-direction: column;   /* Stable sidebar og innhold vertikalt */
+        flex-direction: column;
+    }
+
+    .innhold_toggler {
+        display: none; /* Skjult på desktop */
     }
 
     .innholdsfortegnelse {
-        position: static;         /* Ikke lenger sticky */
+        position: static;
         width: 100%;
         min-width: unset;
         border-left: none;
-        border-bottom: 4px solid #555;  /* Strek under istedenfor til venstre */
+        border-bottom: 4px solid #555;
         margin: 0;
         border-radius: 0;
+        box-sizing: border-box;
     }
 
     .innholdsfortegnelse ul {
-        display: flex;            /* Lenker side om side */
-        gap: 15px;
-        flex-wrap: wrap;          /* Brytes til ny linje hvis det ikke er plass */
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
     }
 }
 
-/* Mobil */
 @media (max-width: 480px) {
+    .innhold_toggler {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background: none;
+        border: none;
+        font-size: 1em;
+        font-weight: bold;
+        text-align: left;
+        cursor: pointer;
+        color: #333;
+    }
+
     .innholdsfortegnelse ul {
-        flex-direction: column;   /* Lenker under hverandre igjen på liten skjerm */
+        display: none;        /* Skjult som standard */
+        flex-direction: column;
+        gap: 0;
+    }
+
+    /* Når man trykker på knappen, vises listen */
+    .innholdsfortegnelse.åpen ul {
+        display: flex;
+    }
+
+    .innholdsfortegnelse a {
+        padding: 6px 4px;
+        border-top: 1px solid #ddd;  /* Linje mellom hver dag */
     }
 
     .innhold {
-        padding: 0 15px;          /* Mindre padding på mobil */
+        padding: 0 10px;
     }
 }
