@@ -1,25 +1,25 @@
-    body {
-        display: flex;
-        background-color: darkgray;
-    }
+body {
+    display: flex;
+    background-color: darkgray;
+}
 
-    .H1 {
-        text-align: center;
-    }
-    .info {
-        text-align: center;
-    }
+.H1 {
+    text-align: center;
+}
+.info {
+    text-align: center;
+}
 
-    .bilde_stående {
-        width: 100%;
-        max-height: 230px;
-        width: auto;
-    }
-    .bilde_liggende {
-        width: 100%;
-        max-width: 500px;
-        height: auto;
-    }
+.bilde_stående {
+    width: 100%;
+    max-height: 230px;
+    width: auto;
+}
+.bilde_liggende {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
 
 figure {
     display: inline-block;
@@ -75,6 +75,10 @@ figcaption {
     color: #000;
     padding-left: 4px;   /* Liten "skyv" til høyre ved hover */
     transition: padding 0.15s;
+}
+
+.innhold_toggler {
+    display: none;
 }
 
 .innhold {
